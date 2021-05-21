@@ -1,32 +1,34 @@
 {
-    "name": "bright-cloud-studio/rep-finder",
-    "description": "Adds a frontend and backend for listing and searching representatives",
-    "keywords":["rep","finder","bright","cloud","studio"],
-    "type": "contao-bundle",
-    "license": "LGPL-3.0-or-later",
-    "require": {
-    	"php": "~5.4 || ~7.0",
-        "contao/core-bundle": "^4.0"
-    },
-    "authors": [
+    "name":"bright-cloud-studio/rep-finder",
+    "description":"A rep finder module",
+    "homepage": "http://brightcloudstudio.com/",
+    "keywords":["contao", "simple", "finder", "rep"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
         {
-            "name": "Mark St. Jean",
-            "email": "mark@brightcloudstudio.com",
-            "role":"Developer"
+            "name":"Mark St. Jean",
+            "homepage":"http://brightcloudstudio.com/"
         }
     ],
-    "autoload": {
+    "require":{
+        "php": "~5.4 || ~7.0",
+        "contao/core-bundle":"^3.5.9 || ~4.1",
+	"menatwork/contao-multicolumnwizard-bundle": "^3.4.10",
+	"contao-community-alliance/composer-plugin":"^2.4.1 || ~3.0"
+    },
+    "autoload":{
         "psr-0": {
-            "Bcs\\": [
+            "Asc\\": [
                 "system/modules/rep_finder/library"
             ]
-        }
+        } 
     },
     "extra": {
-       "contao": {
+        "contao": {
             "sources": {
                 "system/modules/rep_finder": "system/modules/rep_finder"
             }
         }
-   }
+	}
 }
