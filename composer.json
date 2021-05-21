@@ -1,22 +1,22 @@
 {
-    "name":"bright-cloud-studio/rep-finder",
-    "description":"Adds a frontend and backend for listing and searching representatives",
-    "homepage": "http://www.brightcloudstudo.com",
-    "keywords":["contao", "bright cloud studio", "rep", "finder"],
-    "type":"contao-module",
-    "license":"LGPL-3.0-or-later",
-    "authors":[
+    "name": "bright-cloud-studio/rep-finder",
+    "description": "Adds a frontend and backend for listing and searching representatives",
+    "keywords":["rep","finder","bright","cloud","studio"],
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "require": {
+    	"php": "~5.4 || ~7.0",
+        "guzzlehttp/guzzle": "7.2.0",
+        "contao/core-bundle": "^4.0"
+    },
+    "authors": [
         {
-            "name":"Bright Cloud Studio",
-            "homepage":"http://www.brightcloudstudio.com"
+            "name": "Mark St. Jean",
+            "email": "mark@brightcloudstudio.com",
+            "role":"Developer"
         }
     ],
-    "require":{
-        "php": "~5.4 || ~7.0",
-        "contao/core-bundle": "~3.2 || ~4.1",
-		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
-    },
-    "autoload":{
+    "autoload": {
         "psr-0": {
             "Bcs\\": [
                 "system/modules/rep_finder/library"
@@ -24,10 +24,10 @@
         }
     },
     "extra": {
-        "contao": {
+       "contao": {
             "sources": {
                 "system/modules/rep_finder": "system/modules/rep_finder"
             }
         }
-	}
+   }
 }
