@@ -1,0 +1,25 @@
+<!–– Wrapper for the whole module on the page ––>
+<div class="mod_locations_list">
+	<!–– input for entering in the zip code, automatically update results on input ––>
+	<p style="display:none;" class="enter_zip">Enter your ZIP code</p>
+	<input style="display:none;" name="locations_zip_input" class="locations_zip_input" type="text" name="zip"><br>
+
+	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
+    <?php foreach($this->states as $state): ?>
+		<?= implode('', $state['locations']) ?>
+	<?php endforeach; ?>
+	
+	<!–– starts hidden, JS makes visible if no match on input ––>
+	<div class="state state_not_found">
+		<strong>DEFAULT TITLE</strong>
+		<br>
+		<address>
+		    DEFAULT ADDRESS
+	    	</address>
+		<h3>Contact IAC</h3>
+		<p>
+			<a href="tel:1234567890">DEFAULT TELEPHONE NUMBER</a>
+		</p>
+	</div>
+		
+</div>

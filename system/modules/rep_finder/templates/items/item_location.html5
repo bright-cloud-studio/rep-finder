@@ -1,0 +1,15 @@
+<!–– This is for each listing, list off each one ––>
+<div class="location_full" id="id_<?= $this->id; ?>">
+	<div class='name'><?php echo $this->name; ?></div>
+	<div class='address'>
+		<?php if($this->contact_name != ""){echo $this->contact_name . "<br>";} ?>
+		<?php if($this->phone != ""){echo $this->phone . "<br>";} ?>
+		<?php if($this->url != ""){echo $this->url . "<br>";} ?>
+		<?php if($this->territory_notes != ""){echo $this->territory_notes . "<br>";} ?>
+		<?php if($this->zip != ""){echo $this->zip . "<br>";} ?>
+	</div>
+	<!–– Searchable zips ––>
+	<div class="hidden_zip">
+		<?php echo $this->zip; ?>
+	</div>
+</div>
