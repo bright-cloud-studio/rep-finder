@@ -21,7 +21,7 @@
 	"autoload": {
         "psr-4": {
             "Bcs\\": [
-                "system/modules/rep_finder/library"
+                "system/modules/rep_finder/library/Bcs"
             ]
         }
     },
