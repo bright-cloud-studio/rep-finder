@@ -18,7 +18,7 @@
     "require-dev": {
         "contao/manager-plugin": "^2.0"
     },
-	"autoload": {
+    "autoload": {
         "psr-4": {
             "Bcs\\": [
                 "system/modules/rep_finder/library/Bcs"
