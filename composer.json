@@ -1,18 +1,18 @@
 {
     "name":"bright-cloud-studio/rep-finder",
-    "description":"A rep finder module",
+    "description":"Adds a frontend module to search for representatives by ZIP Code, and a backend system for managing it.",
     "homepage": "http://brightcloudstudio.com/",
-    "keywords":["contao", "simple", "rep", "finder"],
+    "keywords":["rep", "finder", "bright", "cloud"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
         {
-            "name":"Mark St. Jean",
+            "name":"Bright Cloud Studio",
             "homepage":"https://brightcloudstudio.com"
         }
     ],
     "require":{
-        "php": "^7.4",
+        "php": "^7.0",
         "contao/core-bundle": "^4.9"
     },
     "require-dev": {
