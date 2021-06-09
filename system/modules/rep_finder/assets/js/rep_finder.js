@@ -7,8 +7,8 @@ $(document).ready(function() {
 
 	//hide all divs by default
 	$(".location_full").each(function(){
-		//$(this).hide();
-		$(this).fadeOut();
+		$(this).hide();
+		//$(this).fadeOut();
 	});
 
 	// show our inputs
