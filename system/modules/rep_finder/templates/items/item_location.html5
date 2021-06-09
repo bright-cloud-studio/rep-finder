@@ -1,5 +1,5 @@
 <!–– This is for each listing, list off each one ––>
-<div class="location_full" style="display:none': id="id_<?= $this->id; ?>">
+<div class="location_full" style="display:none;" id="id_<?= $this->id; ?>">
 	<div class='name'><?php echo $this->name; ?></div>
 	<div class='address'>
 		<?php if($this->contact_name != ""){echo $this->contact_name . "<br>";} ?>
