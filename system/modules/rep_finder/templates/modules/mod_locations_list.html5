@@ -10,7 +10,7 @@
 	<?php endforeach; ?>
 	
 	<!–– starts hidden, JS makes visible if no match on input ––>
-	<div class="state state_not_found">
+	<div class="state state_not_found" style="display: none;">
 		
 		<div class="location_default" id="location_default">
 			<div class="name"><span><strong>LAMVIN Inc.</strong></span></div>
@@ -18,7 +18,6 @@
 				<span>4675 North Avenue<br>Oceanside, CA 92056</span><br>
 				<span><strong>Phone: </strong><a href="tel:8004466329">800-446-6329</a></span><br>
 				<span><strong>Fax: </strong><a href="fax:+760.806.3200">760-806-3200</a></span><br>
-				<span><a href="https://lamvin.brightcloudstudioserver.com/">https://lamvin.brightcloudstudioserver.com/</a></span><br>
 				<!--<span><strong>Territory Notes: </strong>South Texas - Minus El Paso</span>-->
 			</div>
 			<div class="social">
