@@ -24,6 +24,7 @@ $(document).ready(function() {
 			//$(this).hide();
 			$(this).fadeOut();
 		});
+		$("div.state_not_found").hide();
 		
 		//if the zip is the right characters in length or longer
 		if($(this).val().length >=5 )
