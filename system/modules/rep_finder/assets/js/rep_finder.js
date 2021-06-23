@@ -24,7 +24,9 @@ $(document).ready(function() {
 			//$(this).hide();
 			$(this).fadeOut();
 		});
-		$("div.state_not_found").hide();
+		
+		// lets hide the default address
+		$("div.state_not_found").fadeOut();
 		
 		//if the zip is the right characters in length or longer
 		if($(this).val().length >=5 )
