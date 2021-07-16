@@ -5,6 +5,7 @@
 	-webkit-animation-duration: 2s;
 	animation-name: fade_in;
 	animation-duration: 2s;
+	animation-fill-mode: forwards; 
 }
 
 @-webkit-keyframes fade_in {
@@ -23,6 +24,7 @@
 	-webkit-animation-duration: 2s;
 	animation-name: fade_out;
 	animation-duration: 2s;
+	animation-fill-mode: forwards; 
 }
 
 @-webkit-keyframes fade_out {
