@@ -70,8 +70,8 @@ class LocationsList extends \Contao\Module
 		$objLocation = Location::findBy('published', '1');
 		
 	    	// add our js
-		if (!in_array('system/modules/rep_finder/assets/js/rep_finder.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/rep_finder/assets/js/rep_finder.js';
+		if (!in_array('system/modules/rep_finder/assets/js/rep_finder_pure_js.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/rep_finder/assets/js/rep_finder_pure_js.js';
 		}
 	    
 	    	// add our css
