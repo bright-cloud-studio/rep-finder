@@ -69,8 +69,14 @@ class LocationsList extends \Contao\Module
     {
 		$objLocation = Location::findBy('published', '1');
 		
+	    	// add our js
 		if (!in_array('system/modules/rep_finder/assets/js/rep_finder.js', $GLOBALS['TL_JAVASCRIPT'])) { 
 			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/rep_finder/assets/js/rep_finder.js';
+		}
+	    
+	    	// add our css
+	     	if (!in_array('system/modules/rep_finder/assets/css/rep_finder.css', $GLOBALS['TL_CSS'])) { 
+			$GLOBALS['TL_CSS'][] = 'system/modules/rep_finder/assets/css/rep_finder.css';
 		}
 		
 		// Return if no pending items were found
