@@ -11,51 +11,116 @@ document.addEventListener('DOMContentLoaded', function () {
 	// the function to fire when a keyup event is fired
 	function onKeyUp() {
 	
-		// if we have exactly 5 digits inside the zip input
-		var zip_input = document.getElementById("locations_zip_input");
-		if(zip_input.value.length == 5) {
-			
-			
-			var x = document.getElementsByClassName("location_full");
-			var i;
-			var found = 0;
-			
-			// loop through every location
-			for (i = 0; i < x.length; i++) {
-				
-				// get the hidden zip field
-				var hidden_zip = x[i].getElementsByClassName("hidden_zip");
-				
-				// if the hidden zip contains the searched zip
-				if(hidden_zip[0].innerHTML.indexOf(zip_input.value) !== -1) {
-					x[i].style.display = 'block';
-					found = 1
-				}
-				
-			}
-			// we found a zip, hide the default address
-			if(found == 1){
-				location_default.style.display = 'none';
-			}
-			// nothing found, just show our default address
-			else {
-				location_default.style.display = 'block';
-			}
-			
-		}
-		// there was a keyup event but it has more or less than 5 digits
-		else {
+		// UPDATE: To add Canadian ZIP compatability
+		// if value contains letters, than if there is 7 lenght
+		// if value contains no letters, than if length is 5 like normal
 		
-			// hide our default location
-			location_default.style.display = 'none';
+		// first get our entered zip
+		var zip_input = document.getElementById("locations_zip_input");
+		
+		// if it contains leters its canadian, if not its american
+		var regExp = /^\d+$/;
+		if(regExp.test(zip_input.value)){
+		
+			// zip only contains numbers
+			//console.log("American");
+
+			// if we have exactly 5 digits inside the zip input
+			if(zip_input.value.length == 5) {
 			
-			// hide every location
-			var x = document.getElementsByClassName("location_full");
-			var i;
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = 'none';
+			
+				var x = document.getElementsByClassName("location_full");
+				var i;
+				var found = 0;
+			
+				// loop through every location
+				for (i = 0; i < x.length; i++) {
+				
+					// get the hidden zip field
+					var hidden_zip = x[i].getElementsByClassName("hidden_zip");
+				
+					// if the hidden zip contains the searched zip
+					if(hidden_zip[0].innerHTML.indexOf(zip_input.value) !== -1) {
+						x[i].style.display = 'block';
+						found = 1
+					}
+				
+				}
+				// we found a zip, hide the default address
+				if(found == 1){
+					location_default.style.display = 'none';
+				}
+				// nothing found, just show our default address
+				else {
+					location_default.style.display = 'block';
+				}
+			
+			}
+			// there was a keyup event but it has more or less than 5 digits
+			else {
+		
+				// hide our default location
+				location_default.style.display = 'none';
+			
+				// hide every location
+				var x = document.getElementsByClassName("location_full");
+				var i;
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = 'none';
+				}
+			}
+			
+		} else {
+			
+			// zip contains letters and/or spaces
+			//console.log("Canadian");
+			
+			// if we have exactly 5 digits inside the zip input
+			if(zip_input.value.length == 7) {
+			
+			
+				var x = document.getElementsByClassName("location_full");
+				var i;
+				var found = 0;
+			
+				// loop through every location
+				for (i = 0; i < x.length; i++) {
+				
+					// get the hidden zip field
+					var hidden_zip = x[i].getElementsByClassName("hidden_zip");
+				
+					// if the hidden zip contains the searched zip
+					if(hidden_zip[0].innerHTML.indexOf(zip_input.value) !== -1) {
+						x[i].style.display = 'block';
+						found = 1
+					}
+				
+				}
+				// we found a zip, hide the default address
+				if(found == 1){
+					location_default.style.display = 'none';
+				}
+				// nothing found, just show our default address
+				else {
+					location_default.style.display = 'block';
+				}
+			
+			}
+			// there was a keyup event but it has more or less than 5 digits
+			else {
+		
+				// hide our default location
+				location_default.style.display = 'none';
+			
+				// hide every location
+				var x = document.getElementsByClassName("location_full");
+				var i;
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = 'none';
+				}
 			}
 		}
+		
 	}
   
 }, false);
