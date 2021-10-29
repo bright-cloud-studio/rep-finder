@@ -93,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					if(hidden_zip[0].innerHTML.indexOf(zip_input.value) !== -1) {
 						x[i].style.display = 'block';
 						found = 1
+					} else if(hidden_zip[0].innerHTML.indexOf("all_of_canada") !== -1) {
+						x[i].style.display = 'block';
+						found = 1
 					}
 				
 				}
