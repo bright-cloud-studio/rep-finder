@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			//console.log("Canadian");
 			
 			// if we have exactly 5 digits inside the zip input
-			if(zip_input.value.length == 7) {
+			if(zip_input.value.length >= 3) {
 			
 			
 				var x = document.getElementsByClassName("location_full");
