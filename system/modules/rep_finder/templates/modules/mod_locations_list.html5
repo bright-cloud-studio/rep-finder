@@ -1,8 +1,8 @@
 <!–– Wrapper for the whole module on the page ––>
-<div class="mod_locations_list <?= $this->class ?>">
+<div class="mod_locations_list <?= $this->class ?>" id="mod_locations_list">
 	<!–– input for entering in the zip code, automatically update results on input ––>
 	<p class="enter_zip">Enter a ZIP Code to find reps in that area.</p>
-	<input name="locations_zip_input" class="locations_zip_input" type="text" name="zip" placeholder="Enter ZIP Code"><br>
+	<input name="locations_zip_input" class="locations_zip_input" id="locations_zip_input" type="text" name="zip" placeholder="Enter ZIP Code"><br>
 
 	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
     <?php foreach($this->states as $state): ?>
@@ -10,7 +10,7 @@
 	<?php endforeach; ?>
 	
 	<!–– starts hidden, JS makes visible if no match on input ––>
-	<div class="state state_not_found" style="display: none;">
+	<div class="state state_not_found" id="state_not_found" style="display: none;">
 		
 		<div class="location_default" id="location_default">
 			<div class="name"><span><strong>LAMVIN Inc.</strong></span></div>
