@@ -4,7 +4,7 @@
 	<div class='address'>
 		<?php if($this->contact_name != ""){echo "<span>" . $this->contact_name . "</span><br>";} ?>
 		<?php if($this->phone != ""){echo "<span><a href='" . $this->phone . "'>" . $this->phone . "</a></span><br>";} ?>
-		<?php if($this->url != ""){echo "<span><a href='" . $this->url . "' target=\"_blank\" rel=\"noopener\">" . Wesbite . "</a></span><br>";} ?>
+		<?php if($this->url != ""){echo "<span><a href='" . $this->url . "' target=\"_blank\" rel=\"noopener\">" . Website . "</a></span><br>";} ?>
 		<?php if($this->territory_notes != ""){echo "<span>" . $this->territory_notes . "</span><br>";} ?>
 	</div>
 	<!–– Searchable zips ––>
