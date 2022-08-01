@@ -6,7 +6,9 @@
 
 	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
     <?php foreach($this->states as $state): ?>
-		<?= implode('', $state['locations']) ?>
+    	 <?php foreach($state['locations'] as $location): ?>
+    		<?= $location; ?>
+		<?php endforeach; ?>
 	<?php endforeach; ?>
 	
 	<!–– starts hidden, JS makes visible if no match on input ––>
