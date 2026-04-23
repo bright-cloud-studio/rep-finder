@@ -1,9 +1,13 @@
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
     BrightCloudStudio\RepFinderBundle\Controller\Backend\LocationsController:
         arguments:
             $db: '@doctrine.dbal.default_connection'
         public: true
 
     BrightCloudStudio\RepFinderBundle\Controller\FrontendModule\LocationsListController:
-        tags:
-            - { name: contao.frontend_module, type: locations_list, category: rep_finder }
+        # Tag is handled automatically by the #[AsFrontendModule] attribute
+        # via autoconfigure above — no manual tag needed here

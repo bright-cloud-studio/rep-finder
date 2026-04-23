@@ -22,4 +22,9 @@ class RepFinderBundle extends Bundle
     {
         return \dirname(__DIR__);
     }
+
+    public function getContainerExtension(): ?\Symfony\Component\DependencyInjection\Extension\ExtensionInterface
+    {
+        return null; // No custom extension needed; services.yaml is loaded via Plugin.php
+    }
 }
