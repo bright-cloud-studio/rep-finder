@@ -1,0 +1,106 @@
+{# Wrapper for the whole module on the page #}
+<div class="mod_locations_list {{ cssID.1 ?? '' }}" id="{{ cssID.0 ? cssID.0 : 'mod_locations_list' }}">
+
+    {# ZIP code search input #}
+    <p class="enter_zip">Enter a ZIP Code to find reps in that area.</p>
+    <input
+        name="locations_zip_input"
+        class="locations_zip_input"
+        id="locations_zip_input"
+        type="text"
+        placeholder="Enter ZIP Code"
+        autocomplete="postal-code"
+    >
+
+    {% if empty and not states %}
+        <p class="no_locations">{{ empty }}</p>
+    {% else %}
+        {# All location cards are rendered hidden; JS reveals matches on input #}
+        {% for stateKey, state in states %}
+            {% for location in state.locations %}
+                <div class="location_full" style="display:none;" id="id_{{ location.id }}" data-state="{{ stateKey }}">
+                    <div class="name">
+                        <span><strong>{{ location.name|e }}</strong></span>
+                    </div>
+                    <div class="address">
+                        {% if location.contact_name %}
+                            <span>{{ location.contact_name|e }}</span><br>
+                        {% endif %}
+                        {% if location.phone %}
+                            <span><a href="tel:{{ location.phone|e }}">{{ location.phone|e }}</a></span><br>
+                        {% endif %}
+                        {% if location.url %}
+                            <span><a href="{{ location.url|e }}" target="_blank" rel="noopener noreferrer">Website</a></span><br>
+                        {% endif %}
+                        {% if location.territory_notes %}
+                            <span>{{ location.territory_notes|e }}</span><br>
+                        {% endif %}
+                    </div>
+                    {# Hidden ZIP data used by the JS search #}
+                    <div class="hidden_zip" aria-hidden="true" style="display:none;">{{ location.zip|e }}</div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    {# Shown by JS when no match is found — customise this block for the client's default contact #}
+    <div class="state state_not_found" id="state_not_found" style="display:none;">
+        <div class="location_default" id="location_default">
+            {# Default / fallback contact — edit as needed for the client #}
+            <div class="name"><span><strong>Contact Us</strong></span></div>
+            <div class="address">
+                <span>Please contact us directly for assistance in your area.</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% block javascript %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var container      = document.getElementById('mod_locations_list');
+    var defaultBlock   = document.getElementById('state_not_found');
+
+    if (!container) return;
+
+    container.addEventListener('keyup', function () {
+        var zipInput = document.getElementById('locations_zip_input');
+        if (!zipInput) return;
+
+        var val       = zipInput.value.trim();
+        var isNumeric = /^\d+$/.test(val);
+        var minLength = isNumeric ? 5 : 3;
+        var exact     = isNumeric && val.length === 5;
+        var cards     = document.getElementsByClassName('location_full');
+        var found     = 0;
+
+        // Reset all cards
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].style.display = 'none';
+        }
+        defaultBlock.style.display = 'none';
+
+        if (val.length < minLength || (isNumeric && val.length < 5)) {
+            return;
+        }
+
+        for (var j = 0; j < cards.length; j++) {
+            var hiddenZip = cards[j].getElementsByClassName('hidden_zip');
+            if (!hiddenZip.length) continue;
+
+            var zipData = hiddenZip[0].textContent || hiddenZip[0].innerText;
+
+            if (zipData.indexOf(val) !== -1 || zipData.indexOf('all_of_canada') !== -1) {
+                cards[j].style.display = 'block';
+                found++;
+            }
+        }
+
+        if (found === 0) {
+            defaultBlock.style.display = 'block';
+        }
+    });
+});
+</script>
+{% endblock %}

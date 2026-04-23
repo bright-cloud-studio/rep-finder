@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Rep Finder - Location Plugin for Contao
  *
@@ -9,9 +11,5 @@
  * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
- 
-/* Front end modules */
-$GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Locations List', 'Locations list module.');
 
-/* Back end modules */
-$GLOBALS['TL_LANG']['MOD']['locations'] = array('Rep Locations', 'Configure Rep Locations');
+$GLOBALS['TL_LANG']['tl_module']['customItemTpl'] = ['Custom item template', 'Select a custom item template to override the default.'];

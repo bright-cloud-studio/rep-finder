@@ -1,0 +1,25 @@
+{#
+    item_location.html.twig
+    Individual location card — used when a custom item template is selected in the module settings.
+    Variables: id, name, contact_name, phone, url, territory_notes, zip
+#}
+<div class="location_full" style="display:none;" id="id_{{ id }}">
+    <div class="name">
+        <span><strong>{{ name|e }}</strong></span>
+    </div>
+    <div class="address">
+        {% if contact_name %}
+            <span>{{ contact_name|e }}</span><br>
+        {% endif %}
+        {% if phone %}
+            <span><a href="tel:{{ phone|e }}">{{ phone|e }}</a></span><br>
+        {% endif %}
+        {% if url %}
+            <span><a href="{{ url|e }}" target="_blank" rel="noopener noreferrer">Website</a></span><br>
+        {% endif %}
+        {% if territory_notes %}
+            <span>{{ territory_notes|e }}</span><br>
+        {% endif %}
+    </div>
+    <div class="hidden_zip" aria-hidden="true" style="display:none;">{{ zip|e }}</div>
+</div>

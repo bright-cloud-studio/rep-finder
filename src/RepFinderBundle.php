@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Rep Finder - Location Plugin for Contao
  *
@@ -10,8 +12,14 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
+namespace BrightCloudStudio\RepFinderBundle;
 
-/**
- * Fields
- */
-$GLOBALS['TL_LANG']['tl_module']['locations_customItemTpl'] 	= array('Custom location template', 'Here you can overwrite the default location template.');
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class RepFinderBundle extends Bundle
+{
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
+}

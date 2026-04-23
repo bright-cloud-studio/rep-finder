@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Rep Finder - Location Plugin for Contao
  *
@@ -10,10 +12,11 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
-namespace Bcs\Model;
+namespace BrightCloudStudio\RepFinderBundle\Model;
 
-class Location extends \Model
+use Contao\Model;
+
+class LocationModel extends Model
 {
-	/* Table name */
-	protected static $strTable = 'tl_location';	
+    protected static $strTable = 'tl_location';
 }

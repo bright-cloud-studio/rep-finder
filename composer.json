@@ -1,36 +1,26 @@
 {
-    "name":"bright-cloud-studio/rep-finder",
-    "description":"Adds a frontend module to search for representatives by ZIP Code, and a backend system for managing it.",
-    "homepage": "http://brightcloudstudio.com/",
-    "keywords":["rep", "finder", "bright", "cloud"],
-    "type":"contao-module",
-    "license":"LGPL-3.0-or-later",
-    "authors":[
+    "name": "bright-cloud-studio/rep-finder",
+    "description": "Adds a frontend module to search for representatives by ZIP Code, and a backend system for managing it.",
+    "homepage": "https://brightcloudstudio.com/",
+    "keywords": ["rep", "finder", "bright", "cloud", "contao"],
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
         {
-            "name":"Bright Cloud Studio",
-            "homepage":"https://brightcloudstudio.com"
+            "name": "Bright Cloud Studio",
+            "homepage": "https://brightcloudstudio.com"
         }
     ],
-    "require":{
-        "php": "^8.0",
-        "contao/core-bundle": "^4.13"
-    },
-    "require-dev": {
-        "contao/manager-plugin": "^2.0"
+    "require": {
+        "php": "^8.2",
+        "contao/core-bundle": "^5.3"
     },
     "autoload": {
         "psr-4": {
-            "Bcs\\": [
-                "system/modules/rep_finder/library/Bcs"
-            ]
+            "BrightCloudStudio\\RepFinderBundle\\": "src/"
         }
     },
     "extra": {
-        "contao": {
-            "sources": {
-                "system/modules/rep_finder": "system/modules/rep_finder"
-            }
-        }
-    },
-    "minimum-stability": "dev"
+        "contao-manager-plugin": "BrightCloudStudio\\RepFinderBundle\\ContaoManager\\Plugin"
+    }
 }
